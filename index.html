@@ -40,8 +40,10 @@
     animation:rise .9s cubic-bezier(.2,.7,.2,1) both;
   }
   .logo img{
-    width:100%;height:100%;display:block;
-    filter:drop-shadow(0 0 calc(4px + 26px*var(--g)) rgba(110,165,255,calc(.9*var(--g))));
+    /* caixa maior que a logo: no iPhone o brilho era cortado nas bordas da imagem e aparecia um quadrado */
+    box-sizing:border-box;padding:44px;margin:-44px;width:calc(100% + 88px);max-width:none;height:calc(100% + 88px);object-fit:contain;display:block;
+    -webkit-transform:translateZ(0);transform:translateZ(0);
+    filter:drop-shadow(0 0 calc(30px*var(--g)) rgba(110,165,255,calc(.9*var(--g))));
   }
 
   h1{
